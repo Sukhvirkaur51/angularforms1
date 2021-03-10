@@ -11,7 +11,7 @@
           required
           name="username"
           #username="ngModel"
-          [ngClass]="{'is-valid':userform.submitted && username.invalid}">
+          [ngClass]="{'is-invalid':userform.submitted && username.invalid}">
         </mat-form-field>
 
       <mat-error *ngIf= "userform.submitted && username.invalid">
@@ -23,17 +23,17 @@
 
       <mat-form-field>
           <input
-          type="email"
+          type="text"
           matInput
           placeholder="Your Email"
-          [(ngModel)]="model.email"
-          required
-          email
-          pattern="emailPattern"
+
           name="email"
           #email="ngModel"
+          email
+          [(ngModel)]="model.email"
+          required
           minlength="5"
-          [ngClass]="{'is-valid':userform.submitted && email.invalid}">
+          [ngClass]="{'is-invalid':userform.submitted && email.invalid}">
       </mat-form-field>
 
       <mat-error *ngIf= "userform.submitted && email.invalid">
@@ -41,7 +41,7 @@
           email should be entered
         </mat-error>
 
-        <mat-error *ngIf= "email.errors?.email">
+        <mat-error *ngIf="email.errors?.email">
          invalid format
         </mat-error>
 
@@ -60,10 +60,10 @@
           #contact="ngModel"
           name="contact"
           required
-          [ngClass]="{'is-valid':userform.submitted && contact.invalid}"
+          [ngClass]="{'is-invalid':userform.submitted && contact.invalid}"
           [pattern]="contactNumberPattern">
           <span matPrefix>+91 </span>
-          <!-- <mat-icon matSuffix>phone</mat-icon> -->
+          <mat-icon matSuffix>phone</mat-icon>
 
         </mat-form-field>
 
@@ -87,7 +87,7 @@
           name="address"
           #address="ngModel"
           minlength=5
-          [ngClass]="{'is-valid':userform.submitted && address.invalid}">
+          [ngClass]="{'is-invalid':userform.submitted && address.invalid}">
           </textarea>
       </mat-form-field>
 
@@ -112,10 +112,10 @@
         required
         [ngClass]="{'is-invalid':userform.submitted && password.invalid}"
         minlength=5>
-        <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button> -->
+          </button>
       </mat-form-field>
 
       <mat-error *ngIf= "userform.submitted && password.invalid">
@@ -139,10 +139,10 @@
         name=" confirmpassword"
         required
         pattern={{password.value}}>
-        <!-- <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
+         <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide1">
           <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button> -->
+          </button>
       </mat-form-field>
 
       <mat-error *ngIf= "userform.submitted && confirmpassword.invalid">

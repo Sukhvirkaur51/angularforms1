@@ -16,7 +16,7 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSelect, MatSelectModule} from '@angular/material/select';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({

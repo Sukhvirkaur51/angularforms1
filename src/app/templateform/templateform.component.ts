@@ -25,15 +25,8 @@ export class TemplateformComponent implements OnInit {
 
   model:any=[];
 
-  gettext(f1:NgForm){
-    alert("form submitted");
-
-  }
 
 
-default={
-  location:'Select Location'
 
-};
 
 }
